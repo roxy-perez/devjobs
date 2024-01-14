@@ -10,7 +10,7 @@
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
                 autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <x-input-error :messages="$errors->get('email')" class="mt-2 dark:bg-slate-700" />
         </div>
 
         <!-- Password -->
@@ -20,7 +20,7 @@
             <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
                 autocomplete="current-password" />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            <x-input-error :messages="$errors->get('password')" class="mt-2 dark:bg-slate-700" />
         </div>
 
         <!-- Remember Me -->
@@ -33,22 +33,17 @@
             </label>
         </div>
 
-        <div class="flex justify-between mt-4 gap-2">
-            <x-primary-button
-                class="h-10 w-1/2 ms-3 text-black  bg-yellow-500 hover:bg-indigo-600 hover:text-white dark:bg-indigo-600 dark:text-white dark:hover:bg-yellow-600">
-                <x-link :link="route('register')">
-                    {{ __('Register') }}
-                </x-link>
-            </x-primary-button>
-
-            <x-primary-button
-                class="h-10 w-full ms-2 font-bold bg-indigo-600 hover:bg-yellow-500 hover:text-black dark:bg-indigo-600 dark:text-white dark:hover:bg-yellow-600">
-                {{ __('Log in') }}
-            </x-primary-button>
-
-            <x-link :link="route('password.request')" class="h-10 w-1/2  ms-3 hover:text-indigo-700 font-bold">
+        <div class="flex justify-between mt-4 my-4 gap-2">
+            <x-link :link="route('register')" class="hover:text-indigo-700 font-bold">
+                {{ __('Register') }}
+            </x-link>
+            <x-link :link="route('password.request')" class="hover:text-indigo-700 font-bold">
                 {{ __('Forgot your password?') }}
             </x-link>
         </div>
+        <x-primary-button
+        class="mt-4 w-full justify-center font-bold bg-indigo-600 hover:bg-yellow-400 hover:text-gray-600 dark:bg-indigo-600 dark:text-gray-400 dark:hover:bg-black dark:hover:text-white dark:active:bg-indigo-500">
+            {{ __('Log in') }}
+        </x-primary-button>
     </form>
 </x-guest-layout>
