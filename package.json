@@ -16,6 +16,6 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
-        "@rollup/rollup-darwin-x64": "^4.9.4"
+        "rollup": "npm:@rollup/wasm-node"
     }
 }
