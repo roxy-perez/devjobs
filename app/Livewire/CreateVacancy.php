@@ -2,12 +2,20 @@
 
 namespace App\Livewire;
 
+use App\Models\Salary;
 use Livewire\Component;
+use App\Models\Category;
 
 class CreateVacancy extends Component
 {
     public function render()
     {
-        return view('livewire.create-vacancy');
+        $salaries = Salary::all();
+        $categories = Category::all();
+
+        return view('livewire.create-vacancy', [
+            'salaries' => $salaries,
+            'categories' => $categories,
+        ]);
     }
 }

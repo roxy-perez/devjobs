@@ -8,18 +8,20 @@
         <x-input-label for="salary" :value="__('Monthly Salary')" />
         <select name="salary" id="salary"
             class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-            <option value="">-- {{ __('Select a role') }} --</option>
-            <option value="1"> {{ __('Developer - get a job') }} </option>
-            <option value="2"> {{ __('Recruiter - publish a job') }} </option>
+            <option value="">-- {{ __('Select') }} --</option>
+            @foreach ($salaries as $salary)
+                <option value="{{ $salary->id }}">{{ $salary->salary }}</option>
+            @endforeach
         </select>
     </div>
     <div class="mt-4">
         <x-input-label for="category" :value="__('Category')" />
         <select name="category" id="category"
             class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-            <option value="">-- {{ __('Select a role') }} --</option>
-            <option value="1"> {{ __('Developer - get a job') }} </option>
-            <option value="2"> {{ __('Recruiter - publish a job') }} </option>
+            <option value="">-- {{ __('Select') }} --</option>
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->category }}</option>
+            @endforeach
         </select>
     </div>
     <div class="mt-4">
