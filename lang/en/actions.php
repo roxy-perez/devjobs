@@ -103,6 +103,7 @@ return [
     'up'              => 'Up',
     'update'          => 'Update',
     'user'            => 'We can\'t find a user with that email address.',
+    'vacancy_published' => 'Vacancy published successfully',
     'view'            => 'View',
     'yes'             => 'Yes',
 ];
