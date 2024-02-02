@@ -29,7 +29,7 @@ class CreateVacancy extends Component
         $data['image'] = str_replace('public/vacancies', '', $image);
 
         //Crear vacante
-        Vacancy::created([
+        Vacancy::create([
             'title' => $data['title'],
             'salary_id' => $data['salary'],
             'category_id' => $data['category'],
