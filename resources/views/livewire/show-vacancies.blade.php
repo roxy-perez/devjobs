@@ -8,12 +8,12 @@
                 <p class="text-sm text-gray-500 font-light dark:text-gray-200">{{ __('Last Day To Apply') }}
                     {{ $vacancy->last_day->format('d/m/Y') }}</p>
             </div>
-            <div class="flex flex-col items-stretch gap-3 mt-5 md:flex-row md:mt-0">
+            <div class="flex flex-col gap-4 mt-5 md:flex-row md:mt-0">
                 <a href="#"
-                    class="bg-black uppercase py-2 px-4 rounded-full  text-center text-white text-xs font-bold dark:text-slate-400">
+                    class="bg-black uppercase py-2 px-4 rounded-full text-center text-white text-xs font-bold dark:text-slate-400">
                     {{ __('Candidates') }}
                 </a>
-                <a href="#"
+                <a href="{{ route('vacancy.edit', $vacancy->id) }}"
                     class="bg-indigo-500 uppercase py-2 px-4 rounded-full text-center text-white text-xs font-bold dark:text-slate-400">
                     {{ __('Edit') }}
                 </a>
@@ -27,7 +27,7 @@
         <p class="p-3 text-center text-sm text-gray-600">{{ __('No vacancies to show.') }}</p>
     @endforelse
 
-    <div class="p-3 flex justify-center ">
+    <div class="p-3 flex justify-center">
         {{ $vacancies->links() }}
     </div>
 </div>
