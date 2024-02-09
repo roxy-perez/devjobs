@@ -104,6 +104,7 @@ return [
     'update'          => 'Update',
     'user'            => 'We can\'t find a user with that email address.',
     'vacancy_published' => 'Vacancy published successfully',
+    'vacancy_updated' => 'Vacancy updated successfully',
     'view'            => 'View',
     'yes'             => 'Yes',
 ];

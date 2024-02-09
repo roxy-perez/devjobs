@@ -19,9 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [VacancyController::class, 'index'])->middleware(['auth', 'verified'])->name('vacancy.index');
-Route::get('/vacancies/create', [VacancyController::class, 'create'])->middleware(['auth', 'verified'])->name('vacancy.create');
-Route::get('/vacancies/{vacancy}/edit', [VacancyController::class, 'edit'])->middleware(['auth', 'verified'])->name('vacancy.edit');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [VacancyController::class, 'index'])->name('vacancy.index');
+    Route::get('/vacancies/create', [VacancyController::class, 'create'])->name('vacancy.create');
+    Route::get('/vacancies/{vacancy}/edit', [VacancyController::class, 'edit'])->name('vacancy.edit');
+    Route::put('/vacancies/{vacancy}', [VacancyController::class, 'update'])->name('vacancy.update');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

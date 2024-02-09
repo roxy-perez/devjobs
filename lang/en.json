@@ -1,6 +1,7 @@
 {
     "(and :count more error)": "(and :count more error)",
     "(and :count more errors)": "(and :count more errors)",
+    "A deleted vacancy cannot be restored.": "A deleted vacancy cannot be restored.",
     "A new verification link has been sent to the email address you provided during registration.": "A new verification link has been sent to the email address you provided during registration.",
     "A new verification link has been sent to your email address.": "A new verification link has been sent to your email address.",
     "A Timeout Occurred": "A Timeout Occurred",
@@ -51,6 +52,7 @@
     "Dashboard": "Dashboard",
     "Delete": "Delete",
     "Delete Account": "Delete Account",
+    "Delete Vacancy": "Delete Vacancy",
     "Detach": "Detach",
     "Details": "Details",
     "Develoepr": "Develoepr - get a job",
@@ -218,6 +220,7 @@
     "The given data was invalid.": "The given data was invalid.",
     "The response is not a streamed response.": "The response is not a streamed response.",
     "The response is not a view.": "The response is not a view.",
+    "The vacancy has been deleted.": "The vacancy has been deleted.",
     "This is a secure area of the application. Please confirm your password before continuing.": "This is a secure area of the application. Please confirm your password before continuing.",
     "This password reset link will expire in :count minutes.": "This password reset link will expire in :count minutes.",
     "Title Vacancy": "Title Vacancy",

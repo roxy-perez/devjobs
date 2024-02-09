@@ -104,6 +104,7 @@ return [
     'update'          => 'Actualizar',
     'user'            => 'No encontramos ningún usuario con ese correo electrónico.',
     'vacancy_published' => 'Vacante publicada correctamente',
+    'vacancy_updated' => 'Vacante actualizada correctamente',
     'view'            => 'Ver',
     'yes'             => 'Sí',
 ];

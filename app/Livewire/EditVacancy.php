@@ -2,14 +2,18 @@
 
 namespace App\Livewire;
 
+use Carbon\Carbon;
 use App\Models\Salary;
+use App\Models\Vacancy;
 use Livewire\Component;
 use App\Models\Category;
-use App\Models\Vacancy;
-use Carbon\Carbon;
+use Livewire\WithFileUploads;
 
 class EditVacancy extends Component
 {
+    use WithFileUploads;
+    
+    public $vacancy_id;
     public $title;
     public $salary;
     public $category;
@@ -17,6 +21,7 @@ class EditVacancy extends Component
     public $last_day;
     public $description;
     public $image;
+    public $new_image;
 
     protected $rules = [
         'title' => 'required|string',
@@ -25,11 +30,13 @@ class EditVacancy extends Component
         'company' => 'required|string',
         'last_day' => 'required|date',
         'description' => 'required|string',
+        'new_image' => 'nullable|image|max:1024',
     ];
 
 
     public function mount(Vacancy $vacancy)
     {
+        $this->vacancy_id = $vacancy->id;
         $this->title = $vacancy->title;
         $this->salary = $vacancy->salary_id;
         $this->category = $vacancy->category_id;
@@ -43,11 +50,17 @@ class EditVacancy extends Component
     {
         $data = $this->validate();
 
-        //Almacenar imagen
-        if ($this->image) {
-            $image = $this->image->store('public/vacancies');
-            $data['image'] = str_replace('public/vacancies', '', $image);
+        // Si se sube una nueva imagen
+        if ($this->new_image) {
+            // Guardar nueva imagen
+            $image = $this->new_image->store('public/vacancies');
+            $data['image'] = str_replace('public/vacancies/', '', $image);
+        } else {
+            $data['image'] = $this->image;
         }
+
+        //Encontrar vacante
+        $vacancy = Vacancy::find($this->vacancy_id);
 
         //Actualizar vacante
         $vacancy->update($data);

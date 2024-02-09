@@ -17,10 +17,10 @@
                     class="bg-indigo-500 uppercase py-2 px-4 rounded-full text-center text-white text-xs font-bold dark:text-slate-400">
                     {{ __('Edit') }}
                 </a>
-                <a href="#"
+                <button wire:click="$dispatch('showAlert', {{ $vacancy->id }})" type="button"
                     class="bg-red-500 uppercase py-2 px-4 rounded-full text-center text-white text-xs font-bold dark:text-slate-400">
                     {{ __('Delete') }}
-                </a>
+                </button>
             </div>
         </div>
     @empty
@@ -32,4 +32,32 @@
     </div>
 </div>
 
+@push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            @this.on('showAlert', vacancyId => {
+                Swal.fire({
+                    title: "{{ __('Delete Vacancy') }}",
+                    text: "{{ __('A deleted vacancy cannot be restored.') }}",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    cancelButtonText: "{{ __('Cancel') }}",
+                    confirmButtonText: "{{ __('Yes') }}"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        @this.call('deleteVacancy', vacancyId);
+                        Swal.fire({
+                            title: "{{ __('actions.done') }}",
+                            text: "{{ __('The vacancy has been deleted.') }}",
+                            icon: "success"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+@endpush

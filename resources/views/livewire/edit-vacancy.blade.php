@@ -45,12 +45,22 @@
         <x-input-error :messages="$errors->get('description')" class="mt-2 dark:bg-slate-700" />
     </div>
     <div class="mt-4">
-        <x-input-label for="image" :value="__('Image')" />
-        <x-text-input id="image" class="block mt-1 w-full" type="file" wire:model="image" accept="image/*" />
-        <div class="my-5 w-80" :value="__('Current Image')"></div>
-        <img src="{{ asset('storage/vacancies' . $image) }}" alt="{{ $title }}">
+        <x-input-label class="uppercase" for="image" :value="__('Choose Image')" />
+        <x-text-input id="image" class="block mt-1 w-full" type="file" wire:model="new_image" accept="image/*" />
 
-        <x-input-error :messages="$errors->get('image')" class="mt-2 dark:bg-slate-700" />
+        <div class="my-5 w-80">
+            <x-input-label class="uppercase" for="image" :value="__('Current Image')" />
+            <img src="{{ asset('storage/vacancies/' . $image) }}" alt="{{ $title }}">
+        </div>
+
+        <div class="my-5 w-80">
+            @if ($new_image)
+                {{ __('Image') }}
+                <img src="{{ $new_image->temporaryUrl() }}" alt="{{ $title }}" class="w-80">
+            @endif
+        </div>
+
+        <x-input-error :messages="$errors->get('new_image')" class="mt-2 dark:bg-slate-700" />
     </div>
 
     <x-primary-button
