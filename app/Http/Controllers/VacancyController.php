@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vacancy;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class VacancyController extends Controller
@@ -12,6 +13,7 @@ class VacancyController extends Controller
      */
     public function index()
     {
+        $this->authorize('viewAny', Vacancy::class);
         return view('vacancy.index');
     }
 
@@ -20,6 +22,7 @@ class VacancyController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Vacancy::class);
         return view('vacancy.create');
     }
 
