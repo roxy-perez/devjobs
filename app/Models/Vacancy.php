@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Salary;
+use App\Models\Category;
+use App\Models\Candidate;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Vacancy extends Model
 {
@@ -28,5 +31,10 @@ class Vacancy extends Model
     public function salary()
     {
         return $this->belongsTo(Salary::class);
+    }
+
+    public function candidates()
+    {
+        return $this->hasMany(Candidate::class);
     }
 }

@@ -36,8 +36,6 @@
     @endguest
 
     @cannot('create', App\Models\Vacancy::class)
-        @livewire('apply-vacancy')
+        @livewire('apply-vacancy', ['vacancy' => $vacancy])
     @endcannot()
-    
-
 </div>

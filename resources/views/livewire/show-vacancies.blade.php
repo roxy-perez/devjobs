@@ -3,7 +3,7 @@
         <div
             class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 md:flex md:justify-between md:items-center">
             <div class="leading-5 font-semibold text-gray-900 dark:text-gray-100">
-                <a href="{{ route('vacancy.show', $vacancy->id ) }}" class="text-xl font-bold">{{ $vacancy->title }}</a>
+                <a href="{{ route('vacancy.show', $vacancy->id) }}" class="text-xl font-bold">{{ $vacancy->title }}</a>
                 <p class="text-sm text-gray-600 font-bold dark:text-gray-100">{{ $vacancy->company }}</p>
                 <p class="text-sm text-gray-500 font-light dark:text-gray-200">{{ __('Last Day To Apply') }}
                     {{ $vacancy->last_day->format('d/m/Y') }}</p>
