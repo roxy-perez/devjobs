@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Vacancy extends Model
 {
     use HasFactory;
-    protected $casts = [ 'last_day'=>'date'];
+    protected $casts = ['last_day' => 'date'];
     protected $fillable = [
         'title',
         'salary_id',
@@ -36,5 +36,10 @@ class Vacancy extends Model
     public function candidates()
     {
         return $this->hasMany(Candidate::class);
+    }
+
+    public function recruiter()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

@@ -10,15 +10,15 @@
             </div>
             <div class="flex flex-col gap-4 mt-5 md:flex-row md:mt-0">
                 <a href="#"
-                    class="bg-black uppercase py-2 px-4 rounded-full text-center text-white text-xs font-bold dark:text-slate-400">
+                    class="bg-black uppercase py-2 px-4 rounded-full text-center text-white text-xs font-bold dark:text-slate-400 dark:hover:bg-gray-600 dark:hover:text-white">
                     {{ __('Candidates') }}
                 </a>
                 <a href="{{ route('vacancy.edit', $vacancy->id) }}"
-                    class="bg-indigo-500 uppercase py-2 px-4 rounded-full text-center text-white text-xs font-bold dark:text-slate-400">
+                    class="bg-indigo-500 uppercase py-2 px-4 rounded-full text-center text-white text-xs font-bold dark:text-slate-400 dark:hover:bg-indigo-600 dark:hover:text-white">
                     {{ __('Edit') }}
                 </a>
                 <button wire:click="$dispatch('showAlert', {{ $vacancy->id }})" type="button"
-                    class="bg-red-500 uppercase py-2 px-4 rounded-full text-center text-white text-xs font-bold dark:text-slate-400">
+                    class="bg-red-500 uppercase py-2 px-4 rounded-full text-center text-white text-xs font-bold dark:text-slate-400 dark:hover:bg-red-600 dark:hover:text-white">
                     {{ __('Delete') }}
                 </button>
             </div>
