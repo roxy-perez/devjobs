@@ -9,8 +9,9 @@
                     {{ $vacancy->last_day->format('d/m/Y') }}</p>
             </div>
             <div class="flex flex-col gap-4 mt-5 md:flex-row md:mt-0">
-                <a href="#"
+                <a href="{{ route('candidates.index', $vacancy) }}"
                     class="bg-black uppercase py-2 px-4 rounded-full text-center text-white text-xs font-bold dark:text-slate-400 dark:hover:bg-gray-600 dark:hover:text-white">
+                    {{ $vacancy->candidates->count() }}
                     {{ __('Candidates') }}
                 </a>
                 <a href="{{ route('vacancy.edit', $vacancy->id) }}"
@@ -36,7 +37,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             @this.on('showAlert', vacancyId => {
                 Swal.fire({
                     title: "{{ __('Delete Vacancy') }}",
