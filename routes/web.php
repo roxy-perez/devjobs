@@ -31,6 +31,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/notifications', [App\Http\Controllers\NotificationController::class])->name('notifications');
+Route::get('/notifications', [App\Http\Controllers\NotificationController::class, '__invoke'])->name('notifications');
 
 require __DIR__ . '/auth.php';
