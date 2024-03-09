@@ -7,7 +7,7 @@
     viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
     xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
-        <path 
+        <path
             d="M148.262 227.228C148.262 171.519 194.716 126.358 252.019 126.358C309.323 126.358 355.776 171.519 355.776 227.228C355.776 282.938 309.323 328.099 252.019 328.099C194.716 328.099 148.262 282.938 148.262 227.228Z"
             id="Fill" />
         <image height="512" id="Image" width="512"
