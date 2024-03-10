@@ -57,7 +57,7 @@
     </div>
 
     <x-primary-button
-        class="mt-4 font-bold bg-indigo-600 hover:bg-yellow-400 hover:text-gray-600 dark:bg-indigo-600 dark:text-gray-400 dark:hover:bg-black dark:hover:text-white dark:active:bg-indigo-500">
-        {{ __('Vacancies Creation') }}
+        class="mt-4 text-white font-bold bg-indigo-600 hover:bg-fuchsia-400 hover:text-black dark:bg-indigo-600 dark:text-gray-400 dark:hover:bg-black dark:hover:text-white dark:active:bg-indigo-500">
+        {{ __('Save')}}
     </x-primary-button>
 </form>
